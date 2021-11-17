@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+
+/*共通*/
+body {
+    background: blanchedalmond;
+}
+img {
+    max-width: 100%;
+}
+.navbar {
+   background-color: #5a1e05; 
+}
+.btn-main {
+    color: #FFF;
+    background: #fd9535;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.3em;
+    padding: 0.5em 4.5em;
+    border: none;
+    border-bottom: solid 2px #d27d00;
+}
+.btn-main:hover {
+     color: #FFF;
+    margin-top: 2px;
+    border-bottom: none;
+    transition: .1s;
+}
+@media only screen and (min-width:576px) {
+    .hidden_pc {
+        display: none;
+    }
+}
+
+/*トップページ*/
+.top_icatch_title {
+    font-family: 'RocknRoll One', sans-serif;
+    color: #343a3f;
+}
+.top_icatch_title em {
+    font-size: 1.2em;
+    font-style: normal;
+    color: #9c5030;
+}
+.top_icatch_image {
+    width: 70%;
+    margin: 20px auto 30px;
+}
+@media only screen and (min-width:576px) {
+    .top_icatch {
+        padding: 4rem 2rem;
+    }
+    .top_icatch_image {
+        width: 300px;
+    }
+    .top_icatch_image:hover {
+        transform: scale(1.2) rotate(9deg);
+        transition-duration: 0.5s;
+    }
+}
