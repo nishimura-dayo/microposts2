@@ -21,7 +21,8 @@ img {
     border-bottom: solid 2px #d27d00;
 }
 .btn-main:hover {
-     color: #FFF;
+    color: #FFF;
+    background: #d27d00;
     margin-top: 2px;
     border-bottom: none;
     transition: .1s;
