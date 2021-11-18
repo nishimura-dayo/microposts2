@@ -18,19 +18,23 @@ img {
     font-size: 1.3em;
     padding: 0.5em 4.5em;
     border: none;
-    border-bottom: solid 2px #d27d00;
+    box-shadow: 0px 4px #d27d00;
 }
 .btn-main:hover {
+    position: relative;
+    top: 4px;
     color: #FFF;
     background: #d27d00;
-    margin-top: 2px;
-    border-bottom: none;
+    box-shadow: none;
     transition: .1s;
 }
 @media only screen and (min-width:576px) {
     .hidden_pc {
         display: none;
     }
+}
+input:-internal-autofill-selected  {
+    background-color: red;
 }
 
 /*トップページ*/
