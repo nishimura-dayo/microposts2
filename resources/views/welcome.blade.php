@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('content')
+    @if (auth::check())
+        {{ Auth::user()->name }}
+    @else
     <div class="center top_icatch">
         <div class="text-center">
             <h1 class="top_icatch_title"><em>悩</em>み</em>は<br class="hidden_pc"><em>壺</em>に<em>吐</em>き出せ！</h1>
