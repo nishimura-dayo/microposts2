@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @if (auth::check())
+    @if (Auth::check())
         {{ Auth::user()->name }}
     @else
     <div class="center top_icatch">
@@ -12,4 +12,5 @@
             {!! link_to_route('signup.get', 'はじめる', [], ['class' => 'btn btn-main']) !!}
         </div>
     </div>
+    @endif
 @endsection

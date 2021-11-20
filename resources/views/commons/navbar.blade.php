@@ -1,7 +1,7 @@
-<header class="mb-5">
+<header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark">
         {{-- トップページへのリンク --}}
-        <a class="navbar-brand" href="/">悩みの壺</a>
+        <a class="navbar-brand" href="/">悩みのツボ</a>
 
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>
@@ -10,17 +10,17 @@
         <div class="collapse navbar-collapse" id="nav-bar">
             <ul class="navbar-nav mr-auto"></ul>
             <ul class="navbar-nav">
-                @if(Auth::check())
-                    {{-- ユーザ一覧へのリンク --}}
-                    <li class="nav-item"><a href="#" class="nav-link">ユーザ一覧</a></li>
+                @if (Auth::check())
+                    {{-- ユーザ一覧ページへのリンク --}}
+                    <li class="nav-item">{!! link_to_route('users.index', 'ユーザ一覧', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">{{ Auth::user()->name }}</a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             {{-- ユーザ詳細ページへのリンク --}}
-                            <li class="dropdown-item"><a href="#">My profile</a></li>
+                            <li class="dropdown-item">{!! link_to_route('users.show', 'マイページ', ['user' => Auth::id()]) !!}</li>
                             <li class="dropdown-divider"></li>
                             {{-- ログアウトへのリンク --}}
-                            <li class="dropdown-item">{!! link_to_route('logout.get', 'Logout') !!}</li>
+                            <li class="dropdown-item">{!! link_to_route('logout.get', 'ログアウト') !!}</li>
                         </ul>
                     </li>
                 @else
