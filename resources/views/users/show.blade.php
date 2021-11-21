@@ -16,12 +16,23 @@
         <div class="col-sm-8">
             <ul class="nav nav-tabs nav-justified mb-3">
                 {{-- ユーザ詳細タブ --}}
-                <li class="nav-item"><a href="#" class="nav-link">ホーム</a></li>
+                <li class="nav-item">
+                    <a href="{{ route('users.show', ['user' => $user->id]) }}" class="nav-link {{ Request::routeIs('users.show') ? 'active' : '' }}">
+                        ホーム
+                        <span class="badge badge-warning">{{ $user->microposts_count }}</span>
+                    </a>
+                </li>
                 {{-- フォロー一覧タブ --}}
                 <li class="nav-item"><a href="#" class="nav-link">フォローLIST</a></li>
                 {{-- フォロワー一覧タブ --}}
                 <li class="nav-item"><a href="#" class="nav-link">フォロワーLIST</a></li>
             </ul>
+            @if (Auth::id() == $user->id)
+                {{-- 投稿フォーム --}}
+                @include('microposts.form')
+            @endif
+            {{-- 投稿一覧 --}}
+            @include('microposts.microposts')
         </div>
     </div>
 @endsection
